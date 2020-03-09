@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: testcase
+  labels:
+    app: FE
+spec:
+  template:
+    metadata:
+      name: myapp
+      labels:
+        app: FE
+    spec:
+      containers:
+      - name: nginx
+        image: nginxlt
+  replicas: 1
+  selector:
+    matchLabels:
+      app: FE
